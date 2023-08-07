@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 여러개의 데이터를 대입
+      // 배열
+
+      let numbers = [1, 2, 3, 4, 5];
+      const arr = [1, 2, 3, 4, 5];
+      //  array 생성자
+      const arr1 = new Array(1, 2, 3, 4, 5);
+
+      // 배열의 특징
+      // 배열에 포함된 값 하나하나는 배열의 요소, 멤버, 아이템...등등이라고 불림
+      // 각 배열의 요소는 왼쪽부터 순서가 매겨짐 = 인덱스 번호
+      // 인덱스 번호는 0부터 시작
+      // 배열에 원하는 개수만큼 포함시킬 수 있음, 0개도 가능(빈배열 가능)
+      // 다양한 유형의 데이터를 포함할 수 있음 ex. 숫자, 문자열, 객체 등등 섞여도 상관없음
+      // 데이터의 중복을 허용함 똑같은 데이터가 여러개 들어있어도 상관없음
+
+      //참조할 수 있다. 읽거나 쓰기가 가능
+      const ohMyGirl = ["효정", "미미", "유아", "승희", "지호", "비니", "아린"];
+      //읽기
+      console.log(ohMyGirl[0]);
+      console.log(ohMyGirl[2]);
+      console.log(ohMyGirl[5]);
+      console.log(ohMyGirl[9]); //undefined 정의되지 않음. 이름은 있지만 거기에 대한 값을 없음
+      //쓰기
+      ohMyGirl[0] = "갓효정";
+      console.log(ohMyGirl[0]);
+
+      //메소드
+      // 객체가 가지고 있는 기능
+      // push pop indexOf splice forEach length
+      // map-콜백을 호출한 결과를 묶인 새로운 배열을 반환 filter=호출한 결과 true를 반환하는 모든 요소를 모아서 반환 공통점
+      //콜백함수(함수를 호출할때, 함수에 인수로 전달되어지는 것)를 인수로 전달받음
+      //배열의 멤버를 기반으로 새로운 배열을 생성
+      //
+      //push 뒤로 추가
+      ohMyGirl.push("가영");
+
+      //pop 뒤에서 하나 뺌
+      ohMyGirl.pop();
+
+      //indexOf 인덱스 번호보기
+      console.log(ohMyGirl.indexOf("미미"));
+      console.log(ohMyGirl.indexOf("가영")); //없는 값에는 항상 -1 나옴
+
+      //splice 특정 위치에서 몇 개의 요소를 대체한다 !
+      ohMyGirl.splice(0, 1, "효정쓰"); // 0번 인덱스에서 1개를 빼고 "효정쓰"를 넣겠다
+
+      //함수에 인수로 전달되어지는 함수
+      //forEach: 배열의 요소 수만큼 콜백함수를 호출
+      //단, 호출할 때마다 요소를 차례로 전달
+      // 1. 배열의 요소 수만큼 콜백함수를 호출(인수로 요소를 받으면서 호출)
+      // 2. 콜백함수는 별도의 데이터를 반환하지 않는다 (return없음)
+      ohMyGirl.forEach(function (member) {
+        console.log("오마이걸의" + member);
+      });
+
+      const crops = ["토마토", "고추", "가지", "고구마", "들깨"];
+      crops.forEach(function (crop) {
+        const p = document.createElement("p"); //p태그를 하나 생성
+        p.textContent = `맛 좋은 ${crop}`; //p에 textcontent 속성으로 할당
+        document.getElementById("container").append(p); //컨테이너 요소에 추가
+      });
+
+      //map
+      let result = crops.map(function (crop) {
+        const h2 = document.createElement("h2");
+        h2.textContent = `맛 좋은 ${crop}`;
+        document.getElementById("container").append(h2);
+        return h2;
+      });
+      console.log(result);
+      //filter
+      //배열의 요소 수만큼 콜백함수를 호출(인수로 요소를 받으면서 호출)
+      // true를 반환하는 경우에만 결과 배열에 포함시킨다
+      result = crops.filter(function (crop) {
+        return crop.length === 3; //문자열의 길이가 3인 경우에만 토마토, 고구마
+      });
+
+      console.log(result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gayoung's Clock</title>
+    <style>
+      @font-face {
+        font-family: "Rubik Mono One";
+        src: url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      * {
+        font-family: "Rubik Mono One", sans-serif;
+        box-sizing: border-box;
+        font-size: 48px;
+      }
+
+      body {
+        margin: 15px;
+        color: #296dc4;
+        background-color: rgb(0, 0, 0);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .clock {
+        min-width: 360px;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+        border: 1px solid #5183c5;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: -11px -3px 100px 4px;
+      }
+
+      .today {
+        color: #94929d;
+        margin: 15px;
+        transition: all 0.3s;
+        font-size: 18px;
+      }
+
+      .today:hover,
+      .time:hover {
+        color: #fff;
+        transition: all 0.3s;
+      }
+
+      .time {
+        font-size: 55px;
+        margin-top: 10px;
+        transition: all 0.3s;
+        font-weight: 400;
+        text-shadow: 0px 0px 5px #5183c5;
+      }
+      .time-line {
+        justify-content: center;
+        display: flex;
+      }
+      .time-line > span {
+        font-size: 16px;
+        margin: 0 17px 0 30px;
+        color: #94929d;
+        font-weight: 200;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div id="today" class="today"></div>
+      <div id="time" class="time"></div>
+      <div id="time-line" class="time-line">
+        <span>hours</span>
+        <span>minutes</span>
+        <span>seconds</span>
+      </div>
+    </div>
+
+    <script>
+      const todayDiv = document.getElementById("today");
+      const timeDiv = document.getElementById("time");
+
+      const modifyNum = (number) => {
+        return parseInt(number) < 10 ? "0" + number : number;
+      };
+
+      const getNowDate = () => {
+        const nowDate = new Date();
+        const week = [
+          "일요일",
+          "월요일",
+          "화요일",
+          "수요일",
+          "목요일",
+          "금요일",
+          "토요일",
+        ];
+        let year = nowDate.getFullYear();
+        let month = modifyNum(nowDate.getMonth() + 1);
+        let date = modifyNum(nowDate.getDate());
+        let day = nowDate.getDay();
+        setNowDate(year, month, date, week[day]);
+      };
+
+      const setNowDate = (year, month, date, day) => {
+        todayDiv.textContent = `${year}년 ${month}월 ${date}일 ${day}`;
+      };
+
+      const getNowTime = () => {
+        const nowDate = new Date();
+        let hours = modifyNum(nowDate.getHours());
+        let minutes = modifyNum(nowDate.getMinutes());
+        let seconds = modifyNum(nowDate.getSeconds());
+        setNowTime(hours, minutes, seconds);
+      };
+
+      const setNowTime = (hours, minutes, seconds) => {
+        timeDiv.textContent = `${hours} : ${minutes} : ${seconds}`;
+      };
+
+      getNowDate();
+      getNowTime();
+      //시간이 1초마다 실행되는 함수
+      setInterval(getNowTime, 1000);
+    </script>
+  </body>
+</html>

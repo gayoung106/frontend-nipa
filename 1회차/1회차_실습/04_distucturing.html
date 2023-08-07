@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //구조분해할당
+      //배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 표현
+
+      const cafe = {
+        starbucks: "스타벅스",
+        ediya: "이디야",
+        pascucci: "파스쿠찌",
+        coffebean: "커피빈",
+      };
+      //구조분해를 통한 객체 값 복사
+      // cafe로부터 파스쿠찌랑 커피빈만 복사하고 싶어, 객체로부터 분해할꺼야
+      const { pascucci, coffebean } = cafe;
+      //const pascucci = "파스쿠찌" 이런식으로?
+      console.log(pascucci, coffebean);
+    </script>
+  </body>
+</html>
