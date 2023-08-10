@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Nanum Gothic", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+}
+
+* {
+  font-family: "Nanum Gothic", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background-color: #2d3047;
+  color: white;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #545775;
+}
