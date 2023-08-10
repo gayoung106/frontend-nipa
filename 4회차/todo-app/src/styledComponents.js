@@ -100,20 +100,6 @@ export const TodoText = styled.span`
   font-weight: 600;
 `;
 
-// export const TodoComplete = styled.button`
-//   width: 20%;
-//   height: 1.5rem;
-//   border: none;
-//   border-radius: 0.5rem;
-//   color: white;
-//   position: absolute;
-//   right: 30px;
-//   font-size: 15px;
-//   /* justify-content: "center"; */
-//   text-align: "center";
-//   margin-right: 5px;
-//   background-color: transparent;
-// `;
 export const TodoDelete = styled.button`
   width: 10%;
   height: 1.5rem;
