@@ -10,6 +10,7 @@ import {
   TodoText,
   UnorderdList,
   Title,
+  CheckInput,
 } from "./styledComponents";
 
 const App = () => {
@@ -102,6 +103,12 @@ const App = () => {
         {todo.map((item, index) => {
           return (
             <ListItem key={index}>
+              <CheckInput
+                type="checkbox"
+                onClick={() => {
+                  handleToggle(item.todoId);
+                }}
+              />
               <TodoText
                 onClick={() => {
                   handleToggle(item.todoId);

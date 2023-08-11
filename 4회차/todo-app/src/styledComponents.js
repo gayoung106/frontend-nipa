@@ -113,3 +113,8 @@ export const TodoDelete = styled.button`
   right: 0;
   color: #6d6875;
 `;
+
+export const CheckInput = styled.input`
+  background-color: black;
+  margin-right: 15px;
+`;
