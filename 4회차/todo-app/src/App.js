@@ -57,6 +57,10 @@ const App = () => {
     );
   };
 
+  // const handleModify = (todoId) => {
+
+  // }
+
   // 컴포넌트가 만들어지는 순간마다 로컬스토리지 읽어들이기
   useEffect(() => {
     const defaultTodo = JSON.parse(localStorage.getItem("todo"));
@@ -117,7 +121,7 @@ const App = () => {
               >
                 {item.todoText}
               </TodoText>
-
+              {/* <button onClick={() => handleModify(item.todoId)}>수정하기</button> */}
               <TodoDelete
                 onClick={() => {
                   handleDelete(item.todoId);
