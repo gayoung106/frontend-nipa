@@ -1,0 +1,28 @@
+nav {
+  background-color: #445069;
+  height: 100px;
+  text-align: center;
+  padding-top: 40px;
+}
+.nav-link {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: white;
+  font-weight: 500;
+}
+.nav-link::after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #ffffff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+.nav-link.active {
+  color: white !important;
+}
