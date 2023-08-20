@@ -138,9 +138,7 @@ export const Image = styled.div`
 `;
 
 export const H1 = styled.h1`
-  font-family: "Raleway", sans-serif;
-  font-style: italic;
-
+  font-family: "Giants-Inline";
   text-align: center;
   color: #fff;
   margin: 20px;
@@ -155,8 +153,10 @@ export const DetailWrap = styled.div`
 `;
 
 export const DetailName = styled.span`
+  font-family: "Giants-Inline";
+  font-weight: 700;
   font-size: 70px;
-  color: #680803;
+  color: #fff;
   font-weight: 900;
 `;
 
@@ -177,6 +177,8 @@ export const DetailContentWrap = styled.div`
 `;
 
 export const DetailDesc = styled.p`
+  font-family: "HakgyoansimWoojuR";
+  font-weight: 900;
   margin-top: 50px;
   letter-spacing: 0.5px;
   line-height: 1.5;
@@ -200,6 +202,7 @@ export const BtnPerspective = styled.div`
   display: inline-block;
 `;
 export const BackButton = styled.button`
+  font-family: "Giants-Inline";
   border: none;
   position: relative;
   background: #c0392d;
@@ -211,7 +214,7 @@ export const BackButton = styled.button`
   letter-spacing: 2px;
   font-size: 0.9em;
   outline: none;
-  transition: all 0.4s;
+  transition: all 2s;
   cursor: pointer;
   color: #fff;
   display: block;
