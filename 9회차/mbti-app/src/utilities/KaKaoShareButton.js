@@ -9,7 +9,6 @@ const KakaoShareButton = () => {
 
   useEffect(() => {
     Kakao.cleanup();
-    console.log(process.env.REACT_APP_KAKAO_API_KEY);
     Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
   }, []);
 

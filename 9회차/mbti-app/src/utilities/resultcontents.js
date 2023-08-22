@@ -103,7 +103,7 @@ export const resultcontent = [
     type: "INTP",
 
     description: "갑자기 분위기 싸해지게 만들기 1등",
-    keyword: "로봇감성, 팩트폴행, 훈화말씀",
+    keyword: "로봇감성, 팩트폭행, 훈화말씀",
     imgSrc: INTP,
 
     skills: {

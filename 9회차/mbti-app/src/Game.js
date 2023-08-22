@@ -7,7 +7,7 @@ const Game = () => {
   const questionCount = useSelector((state) => state.questionCount);
   return (
     <div style={{ textAlign: "center" }}>
-      {questionCount === 12 ? <Result /> : <Question />}
+      {questionCount === 16 ? <Result /> : <Question />}
     </div>
   );
 };
